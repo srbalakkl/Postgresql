@@ -1,4 +1,4 @@
---Print the number from 1 to 10 without using any built-in function
+-- Q1) Print the number from 1 to 10 without using any built-in function
 with recursive number as (select 1 as n
                           union
                           select n + 1
@@ -8,7 +8,7 @@ select *
 from number;
 
 
---Find the hierarchy of employee under a given name 'Asha' using recursion
+--Q2) Find the hierarchy of employee under a given name 'Asha' using recursion
 create table dvdrental.public.emp_details
 (
     id          serial primary key,
@@ -39,4 +39,18 @@ with recursive emp_hierarchy as (select id,name,manager_id,salary,designation, 1
                                           join emp_details E on H.id = E.manager_id)
 select H.id,H.name,H.manager_id,H.salary,H.designation,H.level,E.name as manager_name
 from emp_hierarchy H
-         join emp_details E on E.id = H.manager_id
+         join emp_details E on E.id = H.manager_id;
+
+-- Q3) Find the hierarchy of managers for the given employee "David"
+select * from emp_details;
+
+with recursive emp_hierarchy as (select id,name,manager_id,salary,designation, 1 as level
+                                 from emp_details
+                                 where name = 'David'
+                                 union
+                                 select E.id,E.name,E.manager_id,E.salary,E.designation, H.level + 1 AS level
+                                 from emp_hierarchy H
+                                          join emp_details E on H.manager_id = E.id)
+select H.id,H.name,H.manager_id,H.salary,H.designation,H.level,E.name as manager_name
+from emp_hierarchy H
+         join emp_details E on E.id = H.manager_id;
