@@ -1,4 +1,4 @@
-----Sub query (classified as inner query & outer query---
+----Sub query (classified as inner query & outer query)---
 /*
 There are 2 types of sub query
 1) Correlated Sub query
