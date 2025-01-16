@@ -80,7 +80,7 @@ WHERE
 
 -- PREPEND AND APPEND --
 -- ARRAY_APPEND is used to insert the value to the end position of the array.
--- ARRAY_APPEND is used to insert the value to the start position of the array.
+-- ARRAY_PREPEND is used to insert the value to the start position of the array.
 UPDATE
     shopping_cart
 SET
