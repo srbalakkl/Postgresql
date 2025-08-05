@@ -1,4 +1,4 @@
---Function In postgresql
+-- Function In postgresql
 create or replace function get_film_count(len_from int, len_to int)
     returns int
     language plpgsql
@@ -17,9 +17,8 @@ $$;
 
 select get_film_count(len_from := 50, len_to := 100);
 
---Default function OR
---IN function
-create or replace function find_film_by_id(p_film_id int)
+-- Default function parameter value is 'IN'
+create or replace function find_film_by_id(in p_film_id int)
     returns varchar
     language plpgsql
 as
@@ -44,7 +43,7 @@ $$;
 
 select find_film_by_id(133);
 
---Out Function
+-- Out Function
 create or replace function get_film_stat(
     out min_len int,
     out max_len int,
