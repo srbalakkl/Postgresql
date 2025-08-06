@@ -4,7 +4,7 @@ Mainly, it is used to protect the database from a bad database design.
 
 > Here the customer_id 1001 has two dates of birth records
 
-![image_1.png](image_1.png)
+![image_1.png](../images/image_1.png)
 
 Normalized Tables are:
 * Easier to understand,
@@ -34,11 +34,11 @@ Violation of 1NF is:
 3. Each Table should have at least one primary key column.
 4. None of the rows should have repeating groups of data.
 
-![image.png](image.png)
+![image.png](../images/image.png)
 
 The repeating group of rows must be written as follows
 
-![image_2.png](image_2.png)
+![image_2.png](../images/image_2.png)
 
 ## 2NF (Second Normal Form)
 Each non-key attribute must depend on the entire primary key.
@@ -48,16 +48,16 @@ Violation of 2NF is
 When a column in a table is functionally dependent on another column.
 
  
-![anomoly.bmp](anomoly.bmp)
+![anomoly.bmp](../images/anomoly.bmp)
 
 Here, The {player_id, item_type} primary key depends on the non-primary_key item_quantity. But only the
   {player_id} attribute depends on {player_rating} the column instead of a whole primary key.
 
-![not_funcionaldependent.webp](not_funcionaldependent.webp)
+![not_funcionaldependent.webp](../images/not_funcionaldependent.webp)
 
 The solution to this problem is splitting the table.
 
-![2nf_solution.webp](2nf_solution.webp)
+![2nf_solution.webp](../images/2nf_solution.webp)
 
 ## 3NF (Third Normal Form)
 Every non-key attribute in a table should depend on the key, Whole key,and nothing but a key.
@@ -66,11 +66,11 @@ Every non-key attribute in a table should depend on the key, Whole key,and nothi
 
 Here, one non-key attribute `{player_skill_level}` depends on another non-key attribute `{player_rating}`(This is called transitive dependency)
 
-![3nfIssue.webp](3nfIssue.webp)
+![3nfIssue.webp](../images/3nfIssue.webp)
 
 The solution to the above issue is
 
-![3nf_soluciotn.webp](3nf_soluciotn.webp)
+![3nf_soluciotn.webp](../images/3nf_soluciotn.webp)
 
 ### 3.5NF (Boyce Codd Normal Form)
 Every ~~non-key~~ attribute in a table should depend on the key, Whole key,and nothing but a key.
@@ -87,11 +87,11 @@ Multivalued dependency is a type of dependency that exists when one attribute in
 
 Here, It creates `data redundancy` because for each `model-color pairing`, all the `styles` are repeated, and vice versa. 
 
-![4nf.webp](4nf.webp)
+![4nf.webp](../images/4nf.webp)
 
 The solution for this problem is to split the table into two separate tables, one for the model-color pairing and another for the styles.
 
-![4nf_solution.webp](4nf_solution.webp)
+![4nf_solution.webp](../images/4nf_solution.webp)
 
 ## 5NF (Fifth Normal Form)
 
