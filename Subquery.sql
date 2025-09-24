@@ -2,10 +2,10 @@
 /*
 There are 2 types of sub query
 1) Correlated Sub query
-        -> First outer query got executed then inner query got executed.
-        -> Inner query is depends on a outer query
+        -> First an outer query got executed, then the inner query got executed.
+        -> Inner query depends on an outer query
 2) Non-Correlated Sub query
-        -> Vice Versa of correlated Sub query.
+        -> Vice Versa of a correlated Sub query.
         2 types of non-correlated sub query
             1) Single Valued Non-correlated sub query.
             2) Multi Valued Non-correlated sub query.

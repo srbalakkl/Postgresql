@@ -41,6 +41,12 @@ The repeating group of rows must be written as follows
 ![image_2.png](../images/image_2.png)
 
 ## 2NF (Second Normal Form)
+
+A table to be said as 2NF if it is already in 1NF and if **no non-prime** attribute 
+(attribute not part of the primary key) is **dependent on the primary key or the portion of the primary key.**
+
+Basically, **2NF removes the partial dependency**.
+
 Each non-key attribute must depend on the entire primary key.
 
 Violation of 2NF is
@@ -60,6 +66,11 @@ The solution to this problem is splitting the table.
 ![2nf_solution.webp](../images/2nf_solution.webp)
 
 ## 3NF (Third Normal Form)
+A table is said to be 3NF if it is in 2NF and there is **No Transitive dependency between non-prime attributes**
+
+### Transitive Dependency
+When **column A depends on column B**, and **column B depends on column C** then **column A Transitively depends on column C**.
+
 Every non-key attribute in a table should depend on the key, Whole key,and nothing but a key.
 
 
@@ -73,8 +84,9 @@ The solution to the above issue is
 ![3nf_soluciotn.webp](../images/3nf_soluciotn.webp)
 
 ### 3.5NF (Boyce Codd Normal Form)
+3.5NF is the mote stricter version of 3NF.
 Every ~~non-key~~ attribute in a table should depend on the key, Whole key,and nothing but a key.
-<note>BCNF is very much similar to the 3NF</note>
+<note>BCNF is very much similar to the 3NF & 3.5NF is not an official name (but some text books call it as 3.5NF)</note>
 
 ## 4NF (Fourth Normal Form)
 Multivalued dependency is a type of dependency that exists when one attribute in a table uniquely determines another attribute set, without any functional dependency on other attributes.

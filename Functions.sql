@@ -24,7 +24,7 @@ create or replace function find_film_by_id(in p_film_id int)
 as
 $$
 declare
-    film_title film.title%type;
+    film_title film.title%type;-- <- This will automatically assign the film table's title column type.
 begin
     -- find film title by id
     select title
